@@ -11,9 +11,14 @@ function App() {
     <div>
       <h1 className="bg-dark text-light p-2">Modal demo</h1>
 
-      <Button variant="secondary" onClick={() => displayModal()}>
-        Open Modal
-      </Button>
+      {[1, 2, 2, 3, 4].map((item, index) => (
+        <div className="mb-1" key={index}>
+          <Button variant="secondary" onClick={() => displayModal()}>
+            Employee Details {index + 1}
+          </Button>
+        </div>
+      ))}
+
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
